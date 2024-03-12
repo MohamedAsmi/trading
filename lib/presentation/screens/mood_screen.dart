@@ -31,25 +31,28 @@ class _MoodScreenState extends State<MoodScreen> {
   }
 
   Widget moodActionsWidget(BuildContext context) {
-    return Column(
-      children: [
-        const Icon(
-          Icons.emoji_emotions,
-          size: 120,
-        ),
-        Text(
-          "GOOD",
-          style: Theme.of(context).textTheme.bodyLarge,
-        ),
-        BaseButton(
-          label: "HOW ARE YOU FEELING ?",
-          onpressed: () {},
-        ),
-        BaseButton(
-          label: "LOG AN EVENT",
-          onpressed: () {},
-        ),
-      ],
+    return Padding(
+      padding: SizesUtils.getVerticalMargin(context, 0.1),
+      child: Column(
+        children: [
+          const Icon(
+            Icons.emoji_emotions,
+            size: 120,
+          ),
+          Text(
+            "GOOD",
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          BaseButton(
+            label: "HOW ARE YOU FEELING ?",
+            onpressed: () {},
+          ),
+          BaseButton(
+            label: "LOG AN EVENT",
+            onpressed: () {},
+          ),
+        ],
+      ),
     );
   }
 

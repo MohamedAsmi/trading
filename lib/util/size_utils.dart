@@ -38,4 +38,9 @@ class SizesUtils {
   static double screenHeight(BuildContext context, double height) {
     return MediaQuery.of(context).size.height * height;
   }
+
+  static EdgeInsetsGeometry getVerticalMargin(BuildContext context, num size) {
+    final double marginValue = MediaQuery.of(context).size.width * size;
+    return EdgeInsets.symmetric(vertical: marginValue);
+  }
 }
