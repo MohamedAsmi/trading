@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const Color kPrimaryOrange = Color.fromARGB(255, 239, 112, 32);
 const Color kPrimaryDark = Color(0xFF050b13);
 const Color kSecondaryDark = Color(0xFF101926);
+const Color kThirdDark = Color(0xff212E40);
 
 // Color palettes for icons
 const Color kIconOrange = Color(0xFFdf8539);

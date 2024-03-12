@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../presentation/screens/mood_screen.dart';
 import '../../presentation/screens/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -12,10 +13,7 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _pages = <Widget>[
     HomeScreen(),
-    Icon(
-      Icons.camera,
-      size: 150,
-    ),
+    MoodScreen(),
     Icon(
       Icons.chat,
       size: 150,
