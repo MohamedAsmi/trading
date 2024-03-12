@@ -13,3 +13,4 @@ const Color kIconBlue = Color(0xFF4986f7);
 // Color palette for texts
 const Color kRedText = Color(0xFFea453d);
 const Color kBlueText = Color(0xFF4986f7);
+const Color kWhiteText = Colors.white;
