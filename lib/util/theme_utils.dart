@@ -25,37 +25,26 @@ final ThemeData appTheme = ThemeData(
     ),
   ),
   textTheme: const TextTheme(
-    displayLarge: TextStyle(
-      color: Color(0x8a000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
+    bodyLarge: TextStyle(
+      color: kBlueText,
+      fontWeight: FontWeight.w500,
+      fontSize: 24,
     ),
-    displayMedium: TextStyle(
-      color: Color(0x8a000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    displaySmall: TextStyle(
-      color: Color(0x8a000000),
-      fontSize: null,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-    ),
-    titleLarge: TextStyle(
-      color: Color(0xFF212427),
+    bodyMedium: TextStyle(
+      color: kBlueText,
+      fontWeight: FontWeight.w500,
       fontSize: 16,
     ),
-    titleMedium: TextStyle(
-      color: Color(0xdd000000),
-      fontSize: 12,
-    ),
-    titleSmall: TextStyle(
-      color: Colors.black45,
-      fontSize: 11,
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
+  ),
+  iconTheme: const IconThemeData(color: kBlueText),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      minimumSize: const Size(double.infinity, 70),
+      backgroundColor: kThirdDark,
+      textStyle: const TextStyle(
+        fontWeight: FontWeight.w900,
+        fontSize: 17,
+      ),
     ),
   ),
 );

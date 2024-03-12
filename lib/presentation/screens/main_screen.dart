@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hero_app/presentation/screens/profile_screen.dart';
 import '../../presentation/screens/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,7 +16,10 @@ class _MainScreenState extends State<MainScreen> {
       Icons.camera,
       size: 150,
     ),
-    ProfileScreen()
+    Icon(
+      Icons.chat,
+      size: 150,
+    ),
   ];
   void _onItemTapped(int index) {
     setState(() {
