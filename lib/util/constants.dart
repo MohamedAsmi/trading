@@ -7,10 +7,10 @@ const Color kSecondaryDark = Color(0xFF101926);
 // Color palettes for icons
 const Color kIconOrange = Color(0xFFdf8539);
 const Color kIconWhite = Color(0xFFFFFFFF);
-const Color kIconRed = Color(0xFFea453d);
-const Color kIconBlue = Color(0xFF4986f7);
+const Color kIconRed = Color(0xFFFF3131);
+const Color kIconBlue = Color(0xFF2F88FF);
 
 // Color palette for texts
-const Color kRedText = Color(0xFFea453d);
+const Color kRedText = Color(0xFFFF3131);
 const Color kBlueText = Color(0xFF4986f7);
 const Color kWhiteText = Colors.white;
