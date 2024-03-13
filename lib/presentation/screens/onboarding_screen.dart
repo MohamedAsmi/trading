@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hero_app/presentation/screens/main_screen.dart';
-import 'package:hero_app/presentation/screens/profile_screen.dart';
 import 'package:hero_app/util/constants.dart';
 
 class OnboardingScreen extends StatelessWidget {
