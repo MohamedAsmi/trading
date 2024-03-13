@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hero_app/presentation/screens/onboarding_screen.dart';
 
 import '../../util/theme_utils.dart';
 import '../../presentation/screens/main_screen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Hero App',
       theme: appTheme,
-      home: const MainScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }
