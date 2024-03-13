@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../../presentation/screens/mood_screen.dart';
-import '../../presentation/screens/home_screen.dart';
-import '../../presentation/screens/trades_screen.dart';
-import '../../presentation/screens/studytime_screen.dart';
-import '../../presentation/screens/profitlost_screen.dart';
+import 'package:hero_app/presentation/screens/home_screen.dart';
+import 'package:hero_app/presentation/screens/profile_screen.dart';
+import 'package:hero_app/presentation/screens/select_asset_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -17,10 +14,11 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _pages = <Widget>[
     HomeScreen(),
-    MoodScreen(),
-    TradesScreen(),
-    StudyTimeScreen(),
-    ProfitLostScreen(),
+    SelectAssetScreen(),
+    ProfileScreen()
+    // TradesScreen(),
+    // StudyTimeScreen(),
+    // ProfitLostScreen(),
   ];
   void _onItemTapped(int index) {
     setState(() {

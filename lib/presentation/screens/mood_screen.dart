@@ -20,7 +20,7 @@ class _MoodScreenState extends State<MoodScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const BaseAppBar(title: "MOOD"),
-      body: loganEventWidget(context),
+      body: moodActionsWidget(context),
     );
   }
 
@@ -49,7 +49,14 @@ class _MoodScreenState extends State<MoodScreen> {
                 ),
                 BaseButton(
                   label: "LOG AN EVENT",
-                  onpressed: () {},
+                  onpressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MoodScreen(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hero_app/presentation/screens/main_screen.dart';
+import 'package:hero_app/presentation/widgets/base%20widgets/button_widget.dart';
 import 'package:hero_app/util/constants.dart';
+import 'package:hero_app/util/size_utils.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -8,73 +10,62 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(40.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            const Center(
-              child: SizedBox(
-                height: 150,
-                width: 150,
-                child: Image(
-                  image: AssetImage(
-                    'assets/images/logo.png',
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 220,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    // Respond to button press
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kPrimaryOrange,
-                  ),
-                  child: const Text(
-                    "SIGN IN",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: kWhiteText,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 50,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Use Navigator.push to go to SecondScreen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MainScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kSecondaryDark,
-                  ),
-                  child: const Text(
-                    'SIGN UP',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: kWhiteText,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+      body: onboardingWidget(
+        context,
       ),
     );
   }
+}
+
+Widget onboardingWidget(BuildContext context) {
+  return SizedBox(
+    height: SizesUtils.screenHeight(
+      context,
+      0.95,
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        const Center(
+          child: SizedBox(
+            height: 150,
+            width: 150,
+            child: Image(
+              image: AssetImage(
+                'assets/images/logo.png',
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 180,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: BaseButton(
+                onpressed: () {},
+                label: "SIGN IN",
+              ),
+            ),
+            Expanded(
+              child: BaseButton(
+                onpressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MainScreen(),
+                    ),
+                  );
+                },
+                label: "SIGN UP",
+                bgColor: kPrimaryOrange,
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
 }

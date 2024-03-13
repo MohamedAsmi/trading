@@ -10,6 +10,7 @@ class BaseButton extends StatelessWidget {
     this.icon,
     this.label,
     this.color,
+    this.bgColor,
     this.isRed = false,
     required this.onpressed,
   });
@@ -18,6 +19,7 @@ class BaseButton extends StatelessWidget {
   IconData? icon;
   final bool isRed;
   final Color? color;
+  final Color? bgColor;
   final VoidCallback? onpressed;
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,9 @@ class BaseButton extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         child: ElevatedButton(
           onPressed: onpressed,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: bgColor,
+          ),
           child: Text(
             label ?? "",
             style: TextStyle(
@@ -52,13 +57,13 @@ class BaseButton extends StatelessWidget {
         child: ElevatedButton.icon(
           icon: Icon(
             icon,
-            size: 30.0,
-            color: isRed == true ? kRedText : null,
+            size: 35.0,
+            color: isRed == true ? kRedText : kBlueText,
           ),
           label: Text(
             label ?? "",
             style: TextStyle(
-              color: isRed == true ? kRedText : null,
+              color: isRed == true ? kRedText : kBlueText,
             ),
           ),
           onPressed: onpressed,
