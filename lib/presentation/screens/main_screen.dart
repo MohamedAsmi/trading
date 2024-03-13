@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+
 import '../../presentation/screens/mood_screen.dart';
 import '../../presentation/screens/home_screen.dart';
+import '../../presentation/screens/trades_screen.dart';
+import '../../presentation/screens/studytime_screen.dart';
+import '../../presentation/screens/profitlost_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,10 +18,9 @@ class _MainScreenState extends State<MainScreen> {
   static const List<Widget> _pages = <Widget>[
     HomeScreen(),
     MoodScreen(),
-    Icon(
-      Icons.chat,
-      size: 150,
-    ),
+    TradesScreen(),
+    StudyTimeScreen(),
+    ProfitLostScreen(),
   ];
   void _onItemTapped(int index) {
     setState(() {

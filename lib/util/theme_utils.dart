@@ -47,4 +47,12 @@ final ThemeData appTheme = ThemeData(
       ),
     ),
   ),
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    backgroundColor: kPrimaryOrange,
+    foregroundColor: kWhiteText,
+    shape: CircleBorder(),
+  ),
+  iconButtonTheme: IconButtonThemeData(
+    style: IconButton.styleFrom(backgroundColor: kThirdDark, iconSize: 35),
+  ),
 );

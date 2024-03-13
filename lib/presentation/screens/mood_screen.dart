@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:gap/gap.dart';
 import 'package:flutter/material.dart';
 
 import '../../util/constants.dart';
 import '../../util/size_utils.dart';
+import '../../util/decoration_utils.dart';
 import '../../presentation/widgets/base widgets/button_widget.dart';
 import '../../presentation/widgets/base widgets/appbar_widget.dart';
 
@@ -17,22 +19,61 @@ class _MoodScreenState extends State<MoodScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const BaseAppBar(title: "MOOD"),
-        body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              moodActionsWidget(context),
-              logWidget(context),
-            ],
-          ),
-        ));
+      appBar: const BaseAppBar(title: "MOOD"),
+      body: loganEventWidget(context),
+    );
   }
 
   Widget moodActionsWidget(BuildContext context) {
+    return SizedBox(
+      height: SizesUtils.screenHeight(context, 0.85),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: SizesUtils.getOnlyTopMargin(context, 0.1),
+            child: Column(
+              children: [
+                const Icon(
+                  Icons.emoji_emotions,
+                  size: 120,
+                ),
+                Text(
+                  "GOOD",
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                BaseButton(
+                  label: "HOW ARE YOU FEELING ?",
+                  onpressed: () {},
+                ),
+                BaseButton(
+                  label: "LOG AN EVENT",
+                  onpressed: () {},
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: kThirdDark,
+            width: double.infinity,
+            height: SizesUtils.screenHeight(context, .08),
+            child: const Center(
+              child: Text(
+                textAlign: TextAlign.center,
+                "LAST LOGGED\n8HRS AGO",
+                style: TextStyle(color: kWhiteText),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget loganEventWidget(BuildContext context) {
     return Padding(
-      padding: SizesUtils.getVerticalMargin(context, 0.1),
+      padding: SizesUtils.getOnlyTopMargin(context, 0.1),
       child: Column(
         children: [
           const Icon(
@@ -40,33 +81,41 @@ class _MoodScreenState extends State<MoodScreen> {
             size: 120,
           ),
           Text(
-            "GOOD",
+            "HOW ARE YOU ?",
             style: Theme.of(context).textTheme.bodyLarge,
           ),
-          BaseButton(
-            label: "HOW ARE YOU FEELING ?",
-            onpressed: () {},
+          const Gap(10),
+          Container(
+            width: SizesUtils.screenWidth(context, .9),
+            padding: SizesUtils.getVerticalMargin(context, 0.05),
+            decoration: BoxDecoration(
+              color: kThirdDark,
+              borderRadius: DecoUtils.commonBorderRadius,
+            ),
+            child: const Center(
+              child: Text(
+                textAlign: TextAlign.center,
+                "IS THE EVENT OVER\nTHE LAST 24 HOURS AFFECTING YOU STILL?",
+                style: TextStyle(color: kWhiteText),
+              ),
+            ),
           ),
-          BaseButton(
-            label: "LOG AN EVENT",
-            onpressed: () {},
-          ),
+          const Gap(10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BaseButton(
+                icon: Icons.done,
+                onpressed: () {},
+              ),
+              BaseButton(
+                isRed: true,
+                icon: Icons.close,
+                onpressed: () {},
+              ),
+            ],
+          )
         ],
-      ),
-    );
-  }
-
-  Widget logWidget(BuildContext context) {
-    return Container(
-      color: kThirdDark,
-      width: double.infinity,
-      height: SizesUtils.screenHeight(context, .08),
-      child: const Center(
-        child: Text(
-          textAlign: TextAlign.center,
-          "LAST LOGGED\n8HRS AGO",
-          style: TextStyle(color: kWhiteText),
-        ),
       ),
     );
   }

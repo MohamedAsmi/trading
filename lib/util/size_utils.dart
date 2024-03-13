@@ -15,7 +15,7 @@ class SizesUtils {
     return EdgeInsets.only(left: paddingValue);
   }
 
-  static EdgeInsetsGeometry defualtPadding(BuildContext context) {
+  static EdgeInsetsGeometry defualtPaddingOrMargin(BuildContext context) {
     final double paddingValue = MediaQuery.of(context).size.width * 0.035;
     return EdgeInsets.symmetric(horizontal: paddingValue, vertical: 5);
   }
@@ -42,5 +42,10 @@ class SizesUtils {
   static EdgeInsetsGeometry getVerticalMargin(BuildContext context, num size) {
     final double marginValue = MediaQuery.of(context).size.width * size;
     return EdgeInsets.symmetric(vertical: marginValue);
+  }
+
+  static EdgeInsetsGeometry getOnlyTopMargin(BuildContext context, num size) {
+    final double marginValue = MediaQuery.of(context).size.width * size;
+    return EdgeInsets.only(top: marginValue);
   }
 }

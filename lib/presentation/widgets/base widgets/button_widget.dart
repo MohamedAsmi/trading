@@ -1,27 +1,51 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
 
+import '../../../util/size_utils.dart';
 import '../../../util/constants.dart';
 
 class BaseButton extends StatelessWidget {
   BaseButton({
     super.key,
-    this.isRed,
     this.icon,
-    required this.label,
+    this.label,
+    this.color,
+    this.isRed = false,
     required this.onpressed,
   });
 
+  String? label;
   IconData? icon;
-  bool? isRed = false;
-  final String label;
+  final bool isRed;
+  final Color? color;
   final VoidCallback? onpressed;
   @override
   Widget build(BuildContext context) {
-    return icon == null ? normalButtonWidget() : iconButtonWidget();
+    return icon == null
+        ? normalButtonWidget()
+        : icon != null && label == null
+            ? iconButtonWidget(context)
+            : iconWithTextButtonWidget();
   }
 
-  Widget iconButtonWidget() {
+  Widget normalButtonWidget() {
+    return Center(
+      child: Container(
+        margin: const EdgeInsets.all(10),
+        child: ElevatedButton(
+          onPressed: onpressed,
+          child: Text(
+            label ?? "",
+            style: TextStyle(
+              color: isRed ? kRedText : color ?? kWhiteText,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget iconWithTextButtonWidget() {
     return Center(
       child: Container(
         margin: const EdgeInsets.all(10),
@@ -32,7 +56,7 @@ class BaseButton extends StatelessWidget {
             color: isRed == true ? kRedText : null,
           ),
           label: Text(
-            label,
+            label ?? "",
             style: TextStyle(
               color: isRed == true ? kRedText : null,
             ),
@@ -43,17 +67,17 @@ class BaseButton extends StatelessWidget {
     );
   }
 
-  Widget normalButtonWidget() {
+  Widget iconButtonWidget(context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.all(10),
-        child: ElevatedButton(
+        width: SizesUtils.screenWidth(context, .4),
+        height: SizesUtils.screenHeight(context, .07),
+        margin: SizesUtils.defualtPaddingOrMargin(context),
+        child: IconButton.filled(
           onPressed: onpressed,
-          child: Text(
-            label,
-            style: const TextStyle(
-              color: kWhiteText,
-            ),
+          icon: Icon(
+            icon,
+            color: isRed ? kRedText : null,
           ),
         ),
       ),
