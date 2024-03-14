@@ -14,22 +14,6 @@ class TradeDetailsScreen extends StatefulWidget {
 }
 
 class _ProfitLostScreenState extends State<TradeDetailsScreen> {
-  late List<ChartData> data;
-  late TooltipBehavior _tooltip;
-
-  @override
-  void initState() {
-    data = [
-      ChartData('CHN', 12),
-      ChartData('GER', 15),
-      ChartData('RUS', 30),
-      ChartData('BRZ', 6.4),
-      ChartData('IND', 14)
-    ];
-    _tooltip = TooltipBehavior(enable: true);
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,20 +69,27 @@ class _ProfitLostScreenState extends State<TradeDetailsScreen> {
   }
 
   Widget chartWidget() {
+    final List<ChartData> chartData = [
+      ChartData(DateTime.parse("2010-01-01"), 35),
+      ChartData(DateTime.parse("2011-01-01"), 28),
+      ChartData(DateTime.parse("2012-01-01"), 34),
+      ChartData(DateTime.parse("2013-01-01"), 32),
+      ChartData(DateTime.parse("2014-01-01"), 20),
+      ChartData(DateTime.parse("2015-01-01"), 35),
+      ChartData(DateTime.parse("2016-01-01"), 28),
+      ChartData(DateTime.parse("2017-01-01"), 34),
+      ChartData(DateTime.parse("2018-01-01"), 32),
+      ChartData(DateTime.parse("2019-01-01"), 20)
+    ];
     return SfCartesianChart(
-      primaryXAxis: const CategoryAxis(),
-      primaryYAxis: const NumericAxis(minimum: 0, maximum: 40, interval: 10),
-      tooltipBehavior: _tooltip,
-      series: <CartesianSeries<ChartData, String>>[
-        ColumnSeries<ChartData, String>(
-          dataSource: data,
-          xValueMapper: (ChartData data, _) => data.x,
-          yValueMapper: (ChartData data, _) => data.y,
-          name: 'forex',
-          color: kPrimaryOrange,
-        )
-      ],
-    );
+        primaryXAxis: const DateTimeAxis(),
+        series: <CartesianSeries>[
+          LineSeries<ChartData, DateTime>(
+              color: kPrimaryOrange,
+              dataSource: chartData,
+              xValueMapper: (ChartData sales, _) => sales.year,
+              yValueMapper: (ChartData sales, _) => sales.sales)
+        ]);
   }
 
   Widget decisionStatsWidget(BuildContext context) {

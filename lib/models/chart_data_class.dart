@@ -1,6 +1,5 @@
 class ChartData {
-  ChartData(this.x, this.y);
-
-  final String x;
-  final double y;
+  ChartData(this.year, this.sales);
+  final DateTime year;
+  final double sales;
 }
