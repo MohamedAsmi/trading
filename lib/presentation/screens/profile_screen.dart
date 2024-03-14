@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:hero_app/presentation/screens/friends_screen.dart';
 import 'package:hero_app/presentation/screens/journal_main_screen.dart';

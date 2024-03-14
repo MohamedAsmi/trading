@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hero_app/presentation/screens/journal_screen.dart';
 import 'package:hero_app/presentation/widgets/base%20widgets/appbar_widget.dart';
