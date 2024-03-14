@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../configs/routes.dart';
 import '../../util/constants.dart';
 import '../../util/size_utils.dart';
 import '../widgets/home screen/statsbutton_widget.dart';
@@ -45,9 +46,12 @@ class _TradesScreenState extends State<TradesScreen> {
               ),
             ],
           ),
-          const StatsButtonWidget(
+          StatsButtonWidget(
             isIcon: true,
             label: "EURUSD",
+            ontap: () {
+              Navigator.pushNamed(context, AppRoutes.tradeDetailsScreen);
+            },
           ),
           const StatsButtonWidget(
             isRed: true,

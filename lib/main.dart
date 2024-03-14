@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hero_app/presentation/screens/trade_details_screen.dart';
 
+import '../../configs/routes.dart';
 import '../../util/theme_utils.dart';
-// import '../../presentation/screens/onboarding_screen.dart';
+import '../../configs/app_config.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Hero App',
       theme: appTheme,
-      home: const TradeDetailsScreen(),
+      title: AppConfig.appName,
+      routes: AppRoutes.routes,
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.onboardingScreen,
     );
   }
 }
