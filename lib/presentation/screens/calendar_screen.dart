@@ -16,10 +16,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BaseAppBar(
-        title: "MAY",
-        actionIcon: Icons.filter_alt,
-      ),
+      appBar: const BaseAppBar(title: "MAY"),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.search),
