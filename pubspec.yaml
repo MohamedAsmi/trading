@@ -39,6 +39,7 @@ dependencies:
   gap: ^3.0.1
   flutter_native_splash: ^2.3.13
   syncfusion_flutter_charts: ^24.2.9
+  calendar_date_picker2: ^0.5.5
 
 dev_dependencies:
   flutter_test:
