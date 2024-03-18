@@ -10,7 +10,7 @@ class AppRoutes {
   static const tradeDetailsScreen = 'trade_details_screen';
 
   static final routes = {
-    homeScreen: (context) => const HomeScreen(),
+    homeScreen: (context) => HomeScreen(),
     calendarScreen: (context) => const CalendarScreen(),
     onboardingScreen: (context) => const OnboardingScreen(),
     tradeDetailsScreen: (context) => const TradeDetailsScreen(),
