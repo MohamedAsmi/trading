@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:hero_app/util/constants.dart';
+import 'package:flutter/material.dart';
+
+import '../../../util/constants.dart';
 
 class TradeCard extends StatelessWidget {
   final String date;

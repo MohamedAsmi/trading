@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:gap/gap.dart';
-import 'package:hero_app/models/trade_class.dart';
-import 'package:hero_app/presentation/screens/calendar_screen.dart';
-import 'package:hero_app/presentation/widgets/base%20widgets/button_widget.dart';
-import 'package:hero_app/presentation/widgets/base%20widgets/tradeCard_widget.dart';
-import 'package:hero_app/util/constants.dart';
+import '../../util/constants.dart';
+import '../../models/trade_class.dart';
+import '../../presentation/screens/calendar_screen.dart';
+import '../../presentation/widgets/base widgets/button_widget.dart';
+import '../widgets/base widgets/tradecard_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -50,7 +47,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("\$\11,435.32"),
+        title: const Text("\$11,435.32"),
         centerTitle: true,
         backgroundColor: kPrimaryDark,
         leading: const Icon(
