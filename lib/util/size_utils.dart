@@ -25,6 +25,11 @@ class SizesUtils {
     return EdgeInsets.symmetric(horizontal: paddingValue);
   }
 
+  static EdgeInsetsGeometry verticleMargin(BuildContext context) {
+    final double maringValue = MediaQuery.of(context).size.width * 0.01;
+    return EdgeInsets.symmetric(vertical: maringValue);
+  }
+
   static EdgeInsetsGeometry getDropDownHorizontalCustomMargin(
       BuildContext context, num size) {
     final double paddingValue = MediaQuery.of(context).size.width * size;

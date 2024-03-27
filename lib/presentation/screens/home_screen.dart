@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
       amount: 152.25,
       trades: 13,
       time: 45,
+      isMissed: false,
     ),
     Trade(
       date: '05/05/2023',
@@ -24,6 +25,7 @@ class HomeScreen extends StatelessWidget {
       amount: 784.5,
       trades: 45,
       time: 32,
+      isMissed: false,
     ),
     Trade(
       date: '04/05/2023',
@@ -32,6 +34,7 @@ class HomeScreen extends StatelessWidget {
       amount: 1524.25,
       trades: 7,
       time: 21,
+      isMissed: true,
     ),
     Trade(
       date: '03/05/2023',
@@ -40,6 +43,7 @@ class HomeScreen extends StatelessWidget {
       amount: 1524.25,
       trades: 7,
       time: 21,
+      isMissed: true,
     ),
   ];
 
@@ -48,13 +52,24 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("\$11,435.32"),
-        centerTitle: true,
-        backgroundColor: kPrimaryDark,
-        leading: const Icon(
-          Icons.message,
-          size: 27,
-          color: kPrimaryOrange,
-        ),
+        leading: const Stack(alignment: Alignment.center, children: [
+          Icon(
+            Icons.chat_bubble,
+            size: 40,
+            color: kPrimaryOrange,
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 5),
+            child: Text(
+              "13",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: kWhiteText,
+                fontSize: 20,
+              ),
+            ),
+          )
+        ]),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
@@ -99,11 +114,12 @@ class HomeScreen extends StatelessWidget {
                 return TradeCard(
                   onpressed: () {},
                   date: trades[index].date,
-                  percentage: trades[index].percentage,
                   mood: trades[index].mood,
-                  earnings: trades[index].amount,
-                  tradesCount: trades[index].trades,
                   timeSpent: trades[index].time,
+                  earnings: trades[index].amount,
+                  isMissed: trades[index].isMissed,
+                  tradesCount: trades[index].trades,
+                  percentage: trades[index].percentage,
                 );
               },
             ),

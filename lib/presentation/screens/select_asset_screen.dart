@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hero_app/presentation/widgets/base%20widgets/appbar_widget.dart';
 import 'package:hero_app/presentation/widgets/base%20widgets/button_widget.dart';
 import 'package:hero_app/util/constants.dart';
 
@@ -9,9 +8,6 @@ class SelectAssetScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BaseAppBar(
-        title: "",
-      ),
       body: selecAssetWidget(
         context,
       ),

@@ -29,17 +29,17 @@ class _CalendarScreenState extends State<CalendarScreen> {
           CalendarDatePicker2(
             config: CalendarDatePicker2Config(
                 calendarType: CalendarDatePicker2Type.multi,
-                controlsTextStyle: const TextStyle(color: kWhiteText),
-                dayTextStyle: const TextStyle(color: kWhiteText),
+                controlsTextStyle: const TextStyle(color: kPrimaryDark),
+                dayTextStyle: const TextStyle(color: kPrimaryDark),
                 nextMonthIcon: const Icon(
                   Icons.arrow_forward_ios,
                   size: 13,
-                  color: kWhiteText,
+                  color: kPrimaryDark,
                 ),
                 lastMonthIcon: const Icon(
                   Icons.arrow_back_ios,
                   size: 13,
-                  color: kWhiteText,
+                  color: kPrimaryDark,
                 )),
             value: [DateTime.now()],
           ),

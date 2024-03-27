@@ -108,7 +108,7 @@ class _ProfitLostScreenState extends State<TradeDetailsScreen> {
               Text.rich(
                 TextSpan(
                   text: 'Good Decisions:',
-                  style: TextStyle(color: kWhiteText),
+                  style: TextStyle(color: kPrimaryDark),
                   children: [
                     TextSpan(
                       text: '13',
@@ -120,7 +120,7 @@ class _ProfitLostScreenState extends State<TradeDetailsScreen> {
               Text.rich(
                 TextSpan(
                   text: 'Bad Decisions:   ',
-                  style: TextStyle(color: kWhiteText),
+                  style: TextStyle(color: kPrimaryDark),
                   children: [
                     TextSpan(
                       text: '11',
@@ -136,12 +136,12 @@ class _ProfitLostScreenState extends State<TradeDetailsScreen> {
             children: [
               Text(
                 "Total Decisions: 24",
-                style: TextStyle(color: kWhiteText),
+                style: TextStyle(color: kPrimaryDark),
               ),
               Text.rich(
                 TextSpan(
                   text: 'GT Decision Ratio:',
-                  style: TextStyle(color: kWhiteText),
+                  style: TextStyle(color: kPrimaryDark),
                   children: [
                     TextSpan(
                       text: '1:1:84',
@@ -182,7 +182,7 @@ class _ProfitLostScreenState extends State<TradeDetailsScreen> {
               const SizedBox(width: 5),
               const Text(
                 "Good Decision",
-                style: TextStyle(color: kWhiteText),
+                style: TextStyle(color: kPrimaryDark),
               )
             ],
           ),
@@ -199,7 +199,7 @@ class _ProfitLostScreenState extends State<TradeDetailsScreen> {
               const SizedBox(width: 5),
               const Text(
                 "Bad Decision",
-                style: TextStyle(color: kWhiteText),
+                style: TextStyle(color: kPrimaryDark),
               )
             ],
           ),
@@ -216,7 +216,7 @@ class _ProfitLostScreenState extends State<TradeDetailsScreen> {
               const SizedBox(width: 5),
               const Text(
                 "Data Point",
-                style: TextStyle(color: kWhiteText),
+                style: TextStyle(color: kPrimaryDark),
               )
             ],
           ),
