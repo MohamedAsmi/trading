@@ -56,13 +56,8 @@ class _ProfitLostScreenState extends State<TradeDetailsScreen> {
             "Decision Map",
             style: TextStyle(color: kPrimaryOrange, fontSize: 18),
           ),
-          Text(
-            "Andrew | GBPUSD",
-            style: Theme.of(context)
-                .textTheme
-                .bodyMedium!
-                .copyWith(color: kWhiteText),
-          )
+          Text("Andrew | GBPUSD",
+              style: Theme.of(context).textTheme.bodyMedium!)
         ],
       ),
     );

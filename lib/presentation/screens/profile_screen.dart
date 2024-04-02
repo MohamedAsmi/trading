@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:hero_app/configs/routes.dart';
 import 'package:hero_app/presentation/screens/friends_screen.dart';
 import 'package:hero_app/presentation/screens/journal_main_screen.dart';
 import 'package:hero_app/presentation/widgets/base%20widgets/appbar_widget.dart';
@@ -99,6 +100,18 @@ class ProfileScreen extends StatelessWidget {
                 bgColor: kPrimaryOrange,
                 onpressed: () {},
                 label: "8 DAY STREAK",
+              ),
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: BaseButton(
+                onpressed: () {
+                  Navigator.pushNamed(context, AppRoutes.settingsScreen);
+                },
+                label: "SETINGS",
               ),
             ),
           ],

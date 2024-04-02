@@ -4,7 +4,8 @@ import '../../configs/routes.dart';
 import '../../util/theme_utils.dart';
 import '../../configs/app_config.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

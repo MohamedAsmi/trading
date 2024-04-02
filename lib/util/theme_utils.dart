@@ -73,7 +73,7 @@ final ThemeData lightTheme = ThemeData(
     actionsIconTheme: IconThemeData(color: kSecondaryDark),
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    elevation: 2,
+    elevation: 20,
     unselectedItemColor: kPrimaryDark,
     selectedItemColor: kPrimaryOrange,
     selectedIconTheme: IconThemeData(
@@ -94,18 +94,18 @@ final ThemeData lightTheme = ThemeData(
     ),
   ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: kPrimaryDark,
+    backgroundColor: kPrimaryOrange,
     foregroundColor: kWhiteText,
     shape: CircleBorder(),
   ),
   textTheme: const TextTheme(
     bodyLarge: TextStyle(
-      color: kWhiteText,
+      color: kPrimaryDark,
       fontWeight: FontWeight.w500,
       fontSize: 24,
     ),
     bodyMedium: TextStyle(
-      color: kWhiteText,
+      color: kPrimaryDark,
       fontWeight: FontWeight.w500,
       fontSize: 16,
     ),
