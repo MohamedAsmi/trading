@@ -60,7 +60,7 @@ final ThemeData appTheme = ThemeData(
 
 final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  scaffoldBackgroundColor: kWhiteText,
+  scaffoldBackgroundColor: kWhiteBG,
   appBarTheme: const AppBarTheme(
     backgroundColor: kWhiteText,
     centerTitle: true,

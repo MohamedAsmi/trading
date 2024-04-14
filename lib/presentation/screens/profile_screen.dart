@@ -39,21 +39,13 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         const Gap(15),
-        const Text(
+        Text(
           "SCOTT SCHANT",
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.w700,
-            color: kWhiteText,
-          ),
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
-        const Text(
+        Text(
           "TRADING SINCE 2021",
-          style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w500,
-            color: kWhiteText,
-          ),
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         const Gap(50),
         Row(
@@ -111,7 +103,7 @@ class ProfileScreen extends StatelessWidget {
                 onpressed: () {
                   Navigator.pushNamed(context, AppRoutes.settingsScreen);
                 },
-                label: "SETINGS",
+                label: "SETTINGS",
               ),
             ),
           ],

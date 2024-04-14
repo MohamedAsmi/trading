@@ -50,21 +50,13 @@ class FriendsScreen extends StatelessWidget {
               ),
             ),
             const Gap(15),
-            const Text(
+            Text(
               "SCOTT SCHANT",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w700,
-                color: kWhiteText,
-              ),
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
-            const Text(
+            Text(
               "TRADING SINCE 2021",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                color: kWhiteText,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             const Gap(20),
             Row(

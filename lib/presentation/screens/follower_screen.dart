@@ -48,19 +48,11 @@ class FollowerScreen extends StatelessWidget {
               const Gap(15),
               Text(
                 name,
-                style: const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
-                  color: kWhiteText,
-                ),
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
               Text(
                 "TRADING SINCE $year",
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  color: kWhiteText,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               const Gap(20),
               Padding(
