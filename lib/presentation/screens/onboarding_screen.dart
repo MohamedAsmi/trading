@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:hero_app/presentation/screens/main_screen.dart';
-import 'package:hero_app/presentation/widgets/base%20widgets/button_widget.dart';
-import 'package:hero_app/util/constants.dart';
-import 'package:hero_app/util/size_utils.dart';
 
-class OnboardingScreen extends StatelessWidget {
+import '../../util/constants.dart';
+import '../../configs/routes.dart';
+import '../../util/size_utils.dart';
+import '../../presentation/widgets/base widgets/button_widget.dart';
+
+class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,19 +51,16 @@ Widget onboardingWidget(BuildContext context) {
           children: [
             Expanded(
               child: BaseButton(
-                onpressed: () {},
+                onpressed: () {
+                  Navigator.pushNamed(context, AppRoutes.loginScreen);
+                },
                 label: "SIGN IN",
               ),
             ),
             Expanded(
               child: BaseButton(
                 onpressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MainScreen(),
-                    ),
-                  );
+                  Navigator.pushNamed(context, AppRoutes.registerScreen);
                 },
                 label: "SIGN UP",
                 bgColor: kPrimaryOrange,
