@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hero_app/configs/utils/helpers/redirecter.dart';
 
 import '../../util/constants.dart';
 import '../../configs/routes.dart';
@@ -13,6 +14,13 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Redirector().iniRedirect(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

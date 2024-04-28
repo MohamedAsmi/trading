@@ -6,17 +6,18 @@ import '../../routes.dart';
 
 class Redirector {
   void iniRedirect(BuildContext context) async {
-    Future.delayed(Duration.zero, () {
-      WidgetsBinding.instance.addPostFrameCallback((_) async {
-        // Initialize SharedPreferences (ensure it's done after the widget tree builds)
+    // Future.delayed(Duration.zero, () {
 
-        final token = AppPreferences.getString("token");
-        if (token != null && token.isNotEmpty) {
-          Navigator.pushReplacementNamed(context, AppRoutes.mainScreen);
-        } else {
-          Navigator.pushReplacementNamed(context, AppRoutes.onboardingScreen);
-        }
-      });
+    // });
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      // Initialize SharedPreferences (ensure it's done after the widget tree builds)
+
+      final token = AppPreferences.getString("token");
+      if (token != null && token.isNotEmpty) {
+        Navigator.pushReplacementNamed(context, AppRoutes.mainScreen);
+      } else {
+        return;
+      }
     });
   }
 
